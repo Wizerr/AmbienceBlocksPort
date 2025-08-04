@@ -6,6 +6,7 @@ import com.wizerr.ambienceblocks.ambience.compendium.BaseCompendium;
 import com.wizerr.ambienceblocks.ambience.compendium.CompendiumEntry;
 import com.wizerr.ambienceblocks.ambience.conds.AbstractCond;
 //import com.sekai.ambienceblocks.ambience.sync.structure.StructureSyncClient;
+import com.wizerr.ambienceblocks.ambience.sync.structure.StructureSyncClient;
 import com.wizerr.ambienceblocks.ambience.sync.target.TargetSyncClient;
 import com.wizerr.ambienceblocks.client.rendering.RenderingEventHandler;
 import com.wizerr.ambienceblocks.client.util.SoundReflection;
@@ -47,7 +48,7 @@ public class AmbienceController {
     public final SoundReflection reflection;
     public final BaseCompendium compendium;
     public final TargetSyncClient target;
-    //public final StructureSyncClient structure;
+    public final StructureSyncClient structure;
 
     //System variables
     public AmbienceData clipboard;
@@ -69,7 +70,7 @@ public class AmbienceController {
         reflection = new SoundReflection(handler);
         compendium = new BaseCompendium();
         target = new TargetSyncClient();
-        //structure = new StructureSyncClient();
+        structure = new StructureSyncClient();
     }
 
     @SubscribeEvent
@@ -127,7 +128,7 @@ public class AmbienceController {
 
         prf.push("tick");
         target.tick();
-        //structure.tick();
+        structure.tick();
         systemTick();
         prf.pop();
 
