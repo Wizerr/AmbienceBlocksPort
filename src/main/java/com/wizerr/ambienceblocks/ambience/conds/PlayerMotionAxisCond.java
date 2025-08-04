@@ -48,7 +48,6 @@ public class PlayerMotionAxisCond extends AbstractCond {
         return "[" + getName() + "] " + test.getName() + " " + value + " " + axis.toString();
     }
 
-    //TODO Does this work?
     @Override
     public boolean isTrue(Player player, Level worldIn, IAmbienceSource sourceIn) {
         switch (axis) {
