@@ -18,16 +18,34 @@ public class PacketHandler {
     );
 
     public static void register() {
-        NET.registerMessage(0, PacketUpdateAmbienceTE.class, PacketUpdateAmbienceTE::encode, PacketUpdateAmbienceTE::decode, PacketUpdateAmbienceTE::handle);
-        NET.registerMessage(1, PacketTargeting.class, PacketTargeting::encode, PacketTargeting::decode, PacketTargeting::handle);
-        NET.registerMessage(2, PacketNotTargeting.class, PacketNotTargeting::encode, PacketNotTargeting::decode, PacketNotTargeting::handle);
-        NET.registerMessage(3, PacketCompendium.class, PacketCompendium::encode, PacketCompendium::decode, PacketCompendium::handle);
+        NET.registerMessage(0, PacketUpdateAmbienceTE.class,
+                PacketUpdateAmbienceTE::encode,
+                PacketUpdateAmbienceTE::decode,
+                PacketUpdateAmbienceTE::handle);
+        NET.registerMessage(1, PacketTargeting.class,
+                PacketTargeting::encode,
+                PacketTargeting::decode,
+                PacketTargeting::handle);
+        NET.registerMessage(2, PacketNotTargeting.class,
+                PacketNotTargeting::encode,
+                PacketNotTargeting::decode,
+                PacketNotTargeting::handle);
+        NET.registerMessage(3, PacketCompendium.class,
+                PacketCompendium::encode,
+                PacketCompendium::decode,
+                PacketCompendium::handle);
         NET.registerMessage(4, PacketOpenCompendiumGui.class,
                 PacketOpenCompendiumGui::encode,
                 PacketOpenCompendiumGui::decode,
                 PacketOpenCompendiumGui::handle);
-        //NET.registerMessage(5, PacketIsItInStructure.class, PacketIsItInStructure::encode, PacketIsItInStructure::decode, PacketIsItInStructure::handle);
-        //NET.registerMessage(6, PacketItIsInStructure.class, PacketItIsInStructure::encode, PacketItIsInStructure::decode, PacketItIsInStructure::handle);
+        NET.registerMessage(5, PacketIsItInStructure.class,
+                PacketIsItInStructure::encode,
+                PacketIsItInStructure::decode,
+                PacketIsItInStructure::handle);
+        NET.registerMessage(6, PacketItIsInStructure.class,
+                PacketItIsInStructure::encode,
+                PacketItIsInStructure::decode,
+                PacketItIsInStructure::handle);
     }
 
 }

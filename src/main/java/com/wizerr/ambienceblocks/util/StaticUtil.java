@@ -2,11 +2,19 @@ package com.wizerr.ambienceblocks.util;
 
 import com.wizerr.ambienceblocks.ambience.util.AmbienceEnumName;
 import com.wizerr.ambienceblocks.ambience.util.AmbienceType;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.phys.AABB;
+//import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.core.registries.BuiltInRegistries;
+//import net.minecraft.core.registries.Registries;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class StaticUtil {
     public static final int LENGTH_SOUND = 100;
@@ -52,13 +60,15 @@ public class StaticUtil {
             list.add(value.getName());
         return list;
     }
-/*
+
     public static ArrayList<String> getListOfStructureTypes() {
         ArrayList<String> list = new ArrayList<>();
-        ForgeRegistries.STRUCTURE_FEATURES.getKeys().forEach(resource -> list.add(resource.toString()));
+        for (Map.Entry<ResourceKey<StructureType<?>>, StructureType<?>> entry : BuiltInRegistries.STRUCTURE_TYPE.entrySet()) {
+            list.add(entry.getKey().location().toString());
+        }
         return list;
     }
-*/
+
     public static AABB growBoundingBox(AABB playerBB, double range) {
         return playerBB.inflate(range/2);
         //AABB bb = new AABB(playerBB);

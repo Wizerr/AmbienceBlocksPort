@@ -131,7 +131,7 @@ public class ClientPacketHandler {
             }
         };
     }
-
+*/
     public static DistExecutor.SafeRunnable handlePacketItIsInStructure(PacketItIsInStructure pkt) {
         return new DistExecutor.SafeRunnable() {
             @Override
@@ -143,5 +143,5 @@ public class ClientPacketHandler {
                     AmbienceController.instance.structure.playerIsntInStructure(pkt.structure, pkt.range, pkt.full);
             }
         };
-    }*/
+    }
 }
