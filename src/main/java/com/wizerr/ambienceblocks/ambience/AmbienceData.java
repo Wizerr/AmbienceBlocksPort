@@ -281,7 +281,6 @@ public class AmbienceData {
 
     public void fromBuff(FriendlyByteBuf buf) {
         //Decode the data from the buffer
-        //TODO readUTF could be not right
         this.soundName = buf.readUtf(StaticUtil.LENGTH_SOUND);
         this.category = buf.readUtf(20);
         this.type = buf.readUtf(10);
@@ -632,7 +631,6 @@ public class AmbienceData {
         return (int) ((max - min) * Math.random() + min);
     }
 
-    //TODO I could make this lazy..
     public float[] getColor() {
         float[] c = new float[4];
         int hue = 0;

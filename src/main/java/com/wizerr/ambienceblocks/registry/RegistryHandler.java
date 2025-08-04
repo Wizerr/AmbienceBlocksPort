@@ -55,7 +55,6 @@ public class RegistryHandler {
             ITEMS.register("ambience_block_finder", ItemAmbienceBlockFinder::new);
     public static final RegistryObject<Item> AMBIENCE_COMPENDIUM =
             ITEMS.register("ambience_compendium", ItemCompendium::new);
-    //TODO override item code to add custom right click behavior for the ambience compendium
 
     //Tile Entities
     public static final RegistryObject<BlockEntityType<AmbienceTileEntity>> AMBIENCE_TILE_ENTITY =

@@ -29,7 +29,6 @@ public class StaticUtil {
             }
         }
         return values[0];
-        //TODO make a version with a default value and one without
     }
 
     public static <T extends Enum<T>> T getEnumValue(String name, T[] values) {
@@ -38,7 +37,6 @@ public class StaticUtil {
                 return value;
         }
         return values[0];
-        //TODO make a version with a default value and one without
     }
 
     public static ArrayList<String> getListOfAmbienceType() {
