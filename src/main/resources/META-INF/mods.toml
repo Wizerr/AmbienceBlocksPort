@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT License"
+
+[[mods]]
+modId="ambienceblocks"
+version="1.20.1-2.0.0-alpha.3"
+displayName="Ambience Blocks"
+authors="Sekai Red, Wizerr"
+description='''
+A mod that adds blocks that can play any sounds in the game (and from resource packs) on loop or with delay.
+'''
+
+[[dependencies.ambienceblocks]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ambienceblocks]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
