@@ -68,7 +68,7 @@ public class PlayerStructureCond extends AbstractCond {
     public void getDataFromWidgets(List<AbstractAmbienceWidgetMessenger> allWidgets) {
         for(AbstractAmbienceWidgetMessenger widget : allWidgets) {
             if(EQUAL.equals(widget.getKey()) && widget instanceof AmbienceWidgetEnum)
-                equal = (AmbienceEquality) ((AmbienceWidgetEnum) widget).getValue();
+                equal = (AmbienceEquality) ((AmbienceWidgetEnum<?>) widget).getValue();
             //if(STRUCTURE.equals(widget.getKey()) && widget instanceof AmbienceWidgetScroll)
             //    structure = ((AmbienceWidgetScroll) widget).getValue();
             if (STRUCTURE.equals(widget.getKey()) && widget instanceof AmbienceWidgetString)

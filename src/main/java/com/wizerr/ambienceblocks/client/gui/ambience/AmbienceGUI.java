@@ -48,7 +48,7 @@ public class AmbienceGUI extends AmbienceScreen {
     private Button bHelp;
 
     private boolean initialized = false;
-    private boolean closing = false;
+    //private boolean closing = false;
 
     public AmbienceGUI(IAmbienceSource source) {
         super(Component.translatable("narrator.screen.globalambiencegui"));
