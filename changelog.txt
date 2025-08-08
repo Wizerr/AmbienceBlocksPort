@@ -4,3 +4,6 @@
 ====
  - 2.0.0-alpha.1 : First Commit
  - 2.0.0-alpha.2 : Added Compendium
+ - 2.0.0-alpha.5 :
+    * Fix the Cond player.structure
+    * Fix left offset when sound is played by the compendium
