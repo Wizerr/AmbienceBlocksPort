@@ -13,7 +13,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.levelgen.structure.*;
 import net.minecraftforge.network.NetworkDirection;
@@ -117,22 +116,24 @@ public class PacketIsItInStructure {
         ctx.get().setPacketHandled(true);
 
     }
-/*
+    /*
     private static TagKey<Structure> getStructureTag(String structure) {
         return TagKey.create(Registries.STRUCTURE, new ResourceLocation(structure));
     }*/
 
     private static Holder<Structure> getStructureHolder(ServerLevel world, String structureName) {
-        ResourceLocation structureRL = new ResourceLocation(structureName);
+        ResourceLocation structureRL = ResourceLocation.parse(structureName);
         Registry<Structure> structureRegistry = world.registryAccess().registryOrThrow(Registries.STRUCTURE);
         Optional<Holder.Reference<Structure>> optionalHolder = structureRegistry.getHolder(ResourceKey.create(Registries.STRUCTURE, structureRL));
         return optionalHolder.orElse(null);
     }
+    /*
     private static Holder<StructureType<?>> getStructureTypeHolder(ServerLevel world, String structureTypeName) {
-        ResourceLocation typeRL = new ResourceLocation(structureTypeName);
+        ResourceLocation typeRL = ResourceLocation.parse(structureTypeName);
         Registry<StructureType<?>> typeRegistry = world.registryAccess().registryOrThrow(Registries.STRUCTURE_TYPE);
         Optional<Holder.Reference<StructureType<?>>> optionalHolder = typeRegistry.getHolder(ResourceKey.create(Registries.STRUCTURE_TYPE, typeRL));
         return optionalHolder.orElse(null);
     }
+    */
 
 }

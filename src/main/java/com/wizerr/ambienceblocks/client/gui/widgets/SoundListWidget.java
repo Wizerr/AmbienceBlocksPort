@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 public class SoundListWidget extends AbstractWidget {
-    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(Main.MODID, "textures/gui/ambience_gui.png");
+    //private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(Main.MODID, "textures/gui/ambience_gui.png");
     public static final int texWidth = 256;
     public static final int texHeight = 184;
     public int xTopLeft, yTopLeft;

@@ -2,24 +2,10 @@ package com.wizerr.ambienceblocks.util;
 
 import com.wizerr.ambienceblocks.ambience.util.AmbienceEnumName;
 import com.wizerr.ambienceblocks.ambience.util.AmbienceType;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.level.levelgen.structure.StructureType;
-import net.minecraft.world.phys.AABB;
-//import net.minecraft.core.registries.Registries;
-import net.minecraftforge.registries.ForgeRegistries;
-
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class StaticUtil {
     public static final int LENGTH_SOUND = 100;
@@ -53,19 +39,19 @@ public class StaticUtil {
     }
 
     public static ArrayList<String> getListOfAmbienceType() {
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         for(AmbienceType value : AmbienceType.values())
             list.add(value.getName());
         return list;
     }
 
     public static ArrayList<String> getListOfSoundCategories() {
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         for(SoundSource value : SoundSource.values())
             list.add(value.getName());
         return list;
     }
-
+/*
     public static ArrayList<String> getListOfStructures() {
         ArrayList<String> list = new ArrayList<>();
         for (Map.Entry<ResourceKey<StructureType<?>>, StructureType<?>> entry : BuiltInRegistries.STRUCTURE_TYPE.entrySet()) {
@@ -73,22 +59,7 @@ public class StaticUtil {
         }
         return list;
     }
-
-
-
-    public static AABB growBoundingBox(AABB playerBB, double range) {
-        return playerBB.inflate(range/2);
-        //AABB bb = new AABB(playerBB);
-        //bb.setMaxX(bb.maxX + range/2);
-        /*bb.maxX += range/2;
-        bb.maxY += range/2;
-        bb.maxZ += range/2;
-        bb.minX -= range/2;
-        bb.minY -= range/2;
-        bb.minZ -= range/2;*/
-        //return bb;
-    }
-
+*/
     public static BoundingBox growBoundingBox(BoundingBox playerBB, double range) {
         return playerBB.inflatedBy((int) range);
     }
