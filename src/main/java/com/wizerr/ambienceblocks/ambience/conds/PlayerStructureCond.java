@@ -35,8 +35,7 @@ public class PlayerStructureCond extends AbstractCond {
 
     @Override
     public AbstractCond clone() {
-        PlayerStructureCond cond = new PlayerStructureCond(equal, structure, range, full);
-        return cond;
+        return new PlayerStructureCond(equal, structure, range, full);
     }
 
     @Override
@@ -60,7 +59,8 @@ public class PlayerStructureCond extends AbstractCond {
         list.add(new AmbienceWidgetEnum<>(EQUAL, "", 20, equal));
         list.add(new AmbienceWidgetString(RANGE, "Range :", 60, Double.toString(range), 10, ParsingUtil.negativeDecimalNumberFilter));
         list.add(new AmbienceWidgetCheckbox(FULL, "Full? :", 20, full));
-        list.add(new AmbienceWidgetScroll(STRUCTURE, "Struct :", 180, StaticUtil.getListOfStructureTypes(), structure));
+        //list.add(new AmbienceWidgetScroll(STRUCTURE, "Struct :", 180, StaticUtil.getListOfStructures(), structure));
+        list.add(new AmbienceWidgetString(STRUCTURE, "Struct :", 180, structure));
         return list;
     }
 
@@ -69,8 +69,10 @@ public class PlayerStructureCond extends AbstractCond {
         for(AbstractAmbienceWidgetMessenger widget : allWidgets) {
             if(EQUAL.equals(widget.getKey()) && widget instanceof AmbienceWidgetEnum)
                 equal = (AmbienceEquality) ((AmbienceWidgetEnum) widget).getValue();
-            if(STRUCTURE.equals(widget.getKey()) && widget instanceof AmbienceWidgetScroll)
-                structure = ((AmbienceWidgetScroll) widget).getValue();
+            //if(STRUCTURE.equals(widget.getKey()) && widget instanceof AmbienceWidgetScroll)
+            //    structure = ((AmbienceWidgetScroll) widget).getValue();
+            if (STRUCTURE.equals(widget.getKey()) && widget instanceof AmbienceWidgetString)
+                structure = ((AmbienceWidgetString) widget).getValue();
             if (RANGE.equals(widget.getKey()) && widget instanceof AmbienceWidgetString)
                 range = ParsingUtil.tryParseDouble(((AmbienceWidgetString) widget).getValue());
             if (FULL.equals(widget.getKey()) && widget instanceof AmbienceWidgetCheckbox)

@@ -37,7 +37,7 @@ public class CompendiumEntry implements IAmbienceSource {
         this.data = data;
         updateData(this.data);
     }
-
+/*
     @Override
     public Vec3 getOrigin() {
         LocalPlayer player = Minecraft.getInstance().player;
@@ -47,6 +47,12 @@ public class CompendiumEntry implements IAmbienceSource {
         else
             return data.getOffset().add(new Vec3(0.5, 0.5, 0.5));
     }
+    */
+    @Override
+    public Vec3 getOrigin() {
+        return Vec3.ZERO;
+    }
+
 
     @Override
     public boolean isWithinBounds(Player player) {
