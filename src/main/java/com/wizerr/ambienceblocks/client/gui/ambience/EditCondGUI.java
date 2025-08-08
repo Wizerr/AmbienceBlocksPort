@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class EditCondGUI extends AmbienceScreen implements IFetchCond {
-    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(Main.MODID, "textures/gui/ambience_gui.png");
+    private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(Main.MODID, "textures/gui/ambience_gui.png");
 
     public static final int texWidth = 256;
     public static final int texHeight = 184;
@@ -43,10 +43,10 @@ public class EditCondGUI extends AmbienceScreen implements IFetchCond {
 
     //private boolean offToEditSoundLol = false;
 
-    private List<AmbienceWidgetHolder> condWidgets = new ArrayList<>();
+    private final List<AmbienceWidgetHolder> condWidgets = new ArrayList<>();
     //the internal reference to get the values to and pass back to the cond
     //private List<AbstractAmbienceWidgetMessenger> widgetMessengers = new ArrayList<>();
-    private HashMap<AbstractAmbienceWidgetMessenger, AmbienceWidgetHolder> widgetLink = new HashMap<>();
+    private final HashMap<AbstractAmbienceWidgetMessenger, AmbienceWidgetHolder> widgetLink = new HashMap<>();
 
     private Button editCond;
     private Button confirm;

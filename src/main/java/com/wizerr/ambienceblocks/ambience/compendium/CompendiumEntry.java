@@ -3,9 +3,6 @@ package com.wizerr.ambienceblocks.ambience.compendium;
 import com.wizerr.ambienceblocks.ambience.AmbienceData;
 import com.wizerr.ambienceblocks.ambience.IAmbienceSource;
 import com.wizerr.ambienceblocks.ambience.bounds.NoneBounds;
-import com.wizerr.ambienceblocks.ambience.util.AmbienceWorldSpace;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 

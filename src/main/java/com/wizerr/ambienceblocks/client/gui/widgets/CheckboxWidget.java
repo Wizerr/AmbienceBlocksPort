@@ -12,7 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class CheckboxWidget extends Checkbox {
-    private static final ResourceLocation TEXTURE = new ResourceLocation("textures/gui/checkbox.png");
+    private static final ResourceLocation TEXTURE = ResourceLocation.parse("textures/gui/checkbox.png");
 
     public CheckboxWidget(int xIn, int yIn, int widthIn, int heightIn, String msg, boolean isChecked) {
         super(xIn, yIn, widthIn, heightIn, Component.literal(msg), isChecked);

@@ -23,7 +23,7 @@ import java.util.List;
 
 @OnlyIn(Dist.CLIENT)
 public class ChooseSoundGUI extends AmbienceScreen implements StringListWidget.IPressable {
-    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(Main.MODID, "textures/gui/ambience_gui.png");
+    private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(Main.MODID, "textures/gui/ambience_gui.png");
 
     public static final int texWidth = 256;
     public static final int texHeight = 184;
@@ -181,7 +181,7 @@ public class ChooseSoundGUI extends AmbienceScreen implements StringListWidget.I
         if(!selectedDomain.equals("") && !list.getSelectionContent().contains("<")) {
             String resultSound = selectedDomain + ":" + selected + list.getSelectionContent();
             stopSoundPreview();
-            ResourceLocation soundResource = new ResourceLocation(resultSound);
+            ResourceLocation soundResource = ResourceLocation.parse(resultSound);
             SoundEvent soundEvent = BuiltInRegistries.SOUND_EVENT.get(soundResource);
             previewSound = SimpleSoundInstance.forUI(soundEvent, 1.0f, 0.75f);
             mc.getSoundManager().play(previewSound);

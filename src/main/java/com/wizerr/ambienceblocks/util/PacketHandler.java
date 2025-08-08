@@ -11,7 +11,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 public class PacketHandler {
     private static final String PROTOCOL_VERSION = "2";
     public static final SimpleChannel NET = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(Main.MODID, "main"),
+            ResourceLocation.fromNamespaceAndPath(Main.MODID, "main"),
             () -> PROTOCOL_VERSION,
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals
