@@ -3,9 +3,7 @@ package com.wizerr.ambienceblocks.util;
 import com.wizerr.ambienceblocks.Main;
 import com.wizerr.ambienceblocks.packets.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 
 public class PacketHandler {

@@ -1,11 +1,9 @@
 package com.wizerr.ambienceblocks.client.gui.widgets;
 
-import com.wizerr.ambienceblocks.Main;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 
 public class SoundListWidget extends AbstractWidget {
     //private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.fromNamespaceAndPath(Main.MODID, "textures/gui/ambience_gui.png");

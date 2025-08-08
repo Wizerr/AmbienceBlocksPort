@@ -52,9 +52,9 @@ public class EditCondGUI extends AmbienceScreen implements IFetchCond {
     private Button confirm;
     private Button back;
 
-    boolean closing = false;
+    //boolean closing = false;
 
-    private boolean condInit = false;
+    //private boolean condInit = false;
 
     private boolean isFieldBeingEdited = false;
     private CustomTextField fieldBeingEdited;
