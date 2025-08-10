@@ -182,7 +182,7 @@ public class RenderingEventHandler {
         MultiBufferSource.BufferSource bufferSource = mc.renderBuffers().bufferSource();
 
         for (AmbienceTileEntity tile : AmbienceController.instance.getListOfLoadedAmbienceTiles()) {
-            float[] c = tile.data.getColor(); // RGBA entre 0 et 1
+            float[] c = tile.data.getColor();
             renderBlockOutlineAt(poseStack, bufferSource, tile.getBlockPos(), c);
         }
 

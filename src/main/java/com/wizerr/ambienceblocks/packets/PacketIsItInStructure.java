@@ -55,11 +55,11 @@ public class PacketIsItInStructure {
             if(ctx.get().getDirection().equals(NetworkDirection.PLAY_TO_SERVER)) {
                 ServerPlayer player = ctx.get().getSender();
                 ServerLevel world = player.serverLevel();
-                LOGGER.debug("Looking for structure: " + pkt.structure);
+                LOGGER.trace("Looking for structure: " + pkt.structure);
 
                 Holder<Structure> structureHolder = getStructureHolder(world, pkt.structure);
                 if (structureHolder == null) {
-                    LOGGER.debug("Structure not found: " + pkt.structure);
+                    LOGGER.trace("Structure not found: " + pkt.structure);
                     return;
                 }
 
@@ -76,7 +76,7 @@ public class PacketIsItInStructure {
                 }
 
                 if (pair != null && pair.getFirst() != null) {
-                    LOGGER.debug("Nearest structure found at " + pair.getFirst());
+                    LOGGER.trace("Nearest structure found at " + pair.getFirst());
                     BlockPos structurePos = pair.getFirst();
                     Holder<Structure> foundStructure = pair.getSecond();
 
@@ -84,29 +84,29 @@ public class PacketIsItInStructure {
                     StructureStart structureStart = chunk.getStartForStructure(foundStructure.value());
 
                     if (structureStart != null) {
-                        LOGGER.debug("Structure start found in chunk at " + structurePos);
+                        LOGGER.trace("Structure start found in chunk at " + structurePos);
                         if (pkt.full) {
                             if (structureStart.getBoundingBox().intersects(playerBB)) {
                                 isIn = true;
-                                LOGGER.debug("Player is fully inside the structure bounding box");
+                                LOGGER.trace("Player is fully inside the structure bounding box");
                             }
                         } else {
                             for (StructurePiece piece : structureStart.getPieces()) {
                                 if (piece.getBoundingBox().intersects(playerBB)) {
                                     isIn = true;
-                                    LOGGER.debug("Player is inside a structure piece bounding box");
+                                    LOGGER.trace("Player is inside a structure piece bounding box");
                                     break;
                                 }
                             }
                             if (!isIn) {
-                                LOGGER.debug("Player is NOT inside any structure piece bounding box");
+                                LOGGER.trace("Player is NOT inside any structure piece bounding box");
                             }
                         }
                     } else {
-                        LOGGER.debug("No structure start found for this structure in the chunk");
+                        LOGGER.trace("No structure start found for this structure in the chunk");
                     }
                 } else {
-                    LOGGER.debug("No nearest structure found");
+                    LOGGER.trace("No nearest structure found");
                 }
 
                 PacketHandler.NET.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> player),
